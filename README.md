@@ -41,3 +41,10 @@ https://cloud.tencent.com/developer/article/1908180
 ```
 flutter build web --web-renderer html --no-sound-null-safety
 ```
+Canvaskit下载慢导致白屏问题
+```
+flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.28.1/bin/
+```
+或者使用
+https://ping.chinaz.com/unpkg.com
+更改本地host解析

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.noTransition,
       initialRoute: '/',
-      title: 'KのFlutter_Web',
+      title: 'kk',
       getPages: [
         GetPage(name: '/', page: ()=> home()),
         GetPage(name: '/download', page: ()=> Download()),
