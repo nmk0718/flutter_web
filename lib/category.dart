@@ -113,33 +113,41 @@ class category extends StatelessWidget {
                                             if(_dataController.fillText.length>=1){
                                               _dataController.removeSearchParameters();
                                             }
-                                            if(_dataController.primarycategoryIndex==0){
-                                              _dataController.updateGameList(index: 1);
-                                            }else{
-                                              if(_dataController.categorySelectIndex ==0){
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'dramatype','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==1) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'level','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==2) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'region','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==3) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'type','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==4) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'year','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==5) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'company','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }else if(_dataController.categorySelectIndex ==6) {
-                                                _dataController.updateFillText('${_dataController.primarycategory[_dataController.categorySelectIndex][index]}');
-                                                _dataController.updateGameList(index: 1,dramatype:{'key':'sort','value':'${_dataController.primarycategory[_dataController.categorySelectIndex][index]}'});
-                                              }
-                                            }
 
+                                            if (_dataController.primarycategoryIndex == 0) {
+                                              _dataController.updatemovieList(index: 1);
+                                            } else {
+                                              String selectedCategory = _dataController.primarycategory[_dataController.categorySelectIndex][index];
+                                              _dataController.updateFillText(selectedCategory);
+
+                                              String key;
+                                              switch (_dataController.categorySelectIndex) {
+                                                case 0:
+                                                  key = 'dramatype';
+                                                  break;
+                                                case 1:
+                                                  key = 'level';
+                                                  break;
+                                                case 2:
+                                                  key = 'region';
+                                                  break;
+                                                case 3:
+                                                  key = 'type';
+                                                  break;
+                                                case 4:
+                                                  key = 'year';
+                                                  break;
+                                                case 5:
+                                                  key = 'company';
+                                                  break;
+                                                case 6:
+                                                  key = 'sort';
+                                                  break;
+                                                default:
+                                                  key = '';
+                                              }
+                                              _dataController.updatemovieList(index: 1, dramatype: {'key': key, 'value': selectedCategory});
+                                            }
                                           },
                                           child: Container(
                                             padding: EdgeInsets.only(
